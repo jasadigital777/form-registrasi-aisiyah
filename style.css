@@ -1,44 +1,122 @@
-/* Style Tambahan untuk Form Registrasi */
+/* Style Menarik untuk Form Registrasi - Nuansa Hijau */
+:root {
+    --primary-green: #2d6a4f;      /* Hijau Tua Aisyiyah */
+    --accent-green: #40916c;       /* Hijau Sedang */
+    --soft-green: #d8f3dc;         /* Hijau Sangat Muda untuk Background */
+    --white: #ffffff;
+    --shadow: rgba(45, 106, 79, 0.15);
+}
+
 .reg-page {
-    background: var(--light-bg);
+    background: linear-gradient(135deg, var(--soft-green) 0%, #f0fdf4 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 40px 0;
+    justify-content: center;
+    padding: 40px 20px;
 }
 
 .form-card {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 0 auto;
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px var(--shadow);
+    max-width: 550px;
+    width: 100%;
+    border: 1px solid rgba(45, 106, 79, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dekorasi Garis Atas */
+.form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-green), #ffc107);
+}
+
+.form-card h2 {
+    color: var(--primary-green);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.form-card p {
+    color: #666;
+    margin-bottom: 35px;
+    font-size: 0.95rem;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     text-align: left;
 }
 
 .input-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--primary);
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.input-group input, .input-group textarea {
+.input-group input, 
+.input-group textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
     font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fcfdfd;
+}
+
+/* Efek Fokus Hijau Glow */
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(64, 145, 108, 0.15);
+    transform: translateY(-2px);
 }
 
 .btn-primary {
     width: 100%;
+    padding: 16px;
+    background: var(--primary-green);
+    color: white;
     border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(45, 106, 79, 0.3);
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: var(--accent-green);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 25px -5px rgba(45, 106, 79, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Responsif Mobile */
+@media (max-width: 480px) {
+    .form-card {
+        padding: 30px 20px;
+    }
 }
