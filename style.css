@@ -1,122 +1,170 @@
-/* Style Menarik untuk Form Registrasi - Nuansa Hijau */
-:root {
-    --primary-green: #2d6a4f;      /* Hijau Tua Aisyiyah */
-    --accent-green: #40916c;       /* Hijau Sedang */
-    --soft-green: #d8f3dc;         /* Hijau Sangat Muda untuk Background */
-    --white: #ffffff;
-    --shadow: rgba(45, 106, 79, 0.15);
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.reg-page {
-    background: linear-gradient(135deg, var(--soft-green) 0%, #f0fdf4 100%);
-    min-height: 100vh;
+body {
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navigasi */
+header {
+    background: #fff;
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #27ae60; /* Hijau Khas Aisyiyah/Muhammadiyah */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #27ae60;
+}
+
+.cta-button {
+    background: #27ae60;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+    padding-top: 80px;
 }
 
-.form-card {
-    background: var(--white);
-    padding: 50px 40px;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px var(--shadow);
-    max-width: 550px;
-    width: 100%;
-    border: 1px solid rgba(45, 106, 79, 0.05);
-    position: relative;
-    overflow: hidden;
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-/* Dekorasi Garis Atas */
-.form-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(90deg, var(--primary-green), #ffc107);
+.hero-btns {
+    margin-top: 30px;
 }
 
-.form-card h2 {
-    color: var(--primary-green);
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-    font-weight: 800;
-}
-
-.form-card p {
-    color: #666;
-    margin-bottom: 35px;
-    font-size: 0.95rem;
-}
-
-.input-group {
-    margin-bottom: 24px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 700;
-    color: var(--primary-green);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.input-group input, 
-.input-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: #fcfdfd;
-}
-
-/* Efek Fokus Hijau Glow */
-.input-group input:focus, 
-.input-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-green);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(64, 145, 108, 0.15);
-    transform: translateY(-2px);
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 0 10px;
+    font-weight: 600;
+    display: inline-block;
 }
 
 .btn-primary {
+    background: #f1c40f; /* Kuning Cerah */
+    color: #333;
+}
+
+.btn-secondary {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* Features */
+.features {
+    padding: 80px 5%;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-item {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-item .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Form Pendaftaran */
+.registration-form {
+    padding: 80px 5%;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-container input, .form-container select {
     width: 100%;
-    padding: 16px;
-    background: var(--primary-green);
-    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: #27ae60;
     border: none;
-    border-radius: 12px;
+    color: #fff;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 15px -3px rgba(45, 106, 79, 0.3);
-    margin-top: 10px;
 }
 
-.btn-primary:hover {
-    background: var(--accent-green);
-    transform: translateY(-3px);
-    box-shadow: 0 20px 25px -5px rgba(45, 106, 79, 0.4);
-}
-
-.btn-primary:active {
-    transform: translateY(0);
-}
-
-/* Responsif Mobile */
-@media (max-width: 480px) {
-    .form-card {
-        padding: 30px 20px;
-    }
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #333;
+    color: #fff;
 }
